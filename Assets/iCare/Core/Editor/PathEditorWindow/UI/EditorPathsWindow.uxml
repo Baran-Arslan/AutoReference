@@ -1,0 +1,21 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <ui:VisualElement name="Root">
+        <ui:Label name="WindowTitle" class="window-title"/>
+        <ui:VisualElement class="content-container">
+            <ui:VisualElement class="drop-area-container">
+                <ui:Label text="Prefab Paths:"/>
+                <ui:VisualElement name="PrefabDropArea" class="drop-area">
+                    <ui:Label text="Drag &amp; Drop"/>
+                </ui:VisualElement>
+                <ui:ScrollView name="PrefabScrollView"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="drop-area-container">
+                <ui:Label text="ScriptableObject Paths:"/>
+                <ui:VisualElement name="ScriptableObjectDropArea" class="drop-area">
+                    <ui:Label text="Drag &amp; Drop"/>
+                </ui:VisualElement>
+                <ui:ScrollView name="ScriptableObjectScrollView"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

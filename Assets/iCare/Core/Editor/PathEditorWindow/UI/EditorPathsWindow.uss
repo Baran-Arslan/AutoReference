@@ -1,0 +1,43 @@
+.window-title {
+    font-size: 20px;
+    -unity-font-style: bold;
+    color: rgb(62, 186, 88);
+    align-self: center;
+    margin: 10px;
+}
+
+.content-container {
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.drop-area-container {
+    width: 45%;
+}
+
+.drop-area {
+    height: 150px;
+    border-width: 2px;
+    border-color: rgb(100, 100, 100);
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+.drag-hover {
+    border-color: rgb(62, 186, 88);
+}
+
+.path-row {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+.path-label {
+    flex-grow: 1;
+}
+
+.remove-button {
+    width: 60px;
+}

@@ -1,0 +1,15 @@
+{
+    "name": "iCare.Core.Editor",
+    "references": ["GUID:085e5d8bb1df6534784be2673ac9906b"],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
