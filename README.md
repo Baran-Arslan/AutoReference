@@ -12,21 +12,12 @@
 
 - **Automated Dependency Injection**: Automatically assigns references to fields, eliminating the need for manual setup.
 - **Ease of Use**: Simple integration with your existing Unity projects.
-- **Performance Optimized**: Lightweight and efficient, ensuring minimal impact on performance.
+- **Performance Optimized**: Zero impact on runtime performance!
 - **Customizable**: Supports custom attributes and configurable settings for advanced use cases.
 
 ## Installation
 
-### Unity Package Manager (UPM)
-
-1. Open your Unity project.
-2. Navigate to `Window` > `Package Manager`.
-3. Click the `+` button and select `Add package from git URL...`.
-4. Enter the repository URL: `https://github.com/yourusername/AutoReference.git`.
-
-### Manual Installation
-
-1. Download the latest release from the [Releases](https://github.com/yourusername/AutoReference/releases) page.
+1. Download the latest release from the [Releases](https://github.com/Baran-Arslan/AutoReference/releases/tag/v0.0.0) page.
 2. Open your Unity project and navigate to `Assets` > `Import Package` > `Custom Package`.
 3. Select the downloaded `.unitypackage` file and click `Open`.
 
