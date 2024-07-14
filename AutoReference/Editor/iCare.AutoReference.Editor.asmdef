@@ -1,0 +1,18 @@
+{
+  "name": "iCare.AutoReference.Editor",
+  "rootNamespace": "",
+  "references": [
+    "GUID:85ebd1b5df6b52148bfee5bdaa417dc3",
+    "GUID:90670d8a96deeb647bc88df9dc49a4f6",
+    "GUID:bcf4d1b9a5acb4b41969312606aa901f"
+  ],
+  "includePlatforms": [],
+  "excludePlatforms": [],
+  "allowUnsafeCode": false,
+  "overrideReferences": false,
+  "precompiledReferences": [],
+  "autoReferenced": true,
+  "defineConstraints": [],
+  "versionDefines": [],
+  "noEngineReferences": false
+}
