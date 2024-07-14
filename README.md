@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Unity](https://img.shields.io/badge/Unity-2020.3%2B-green.svg)
-![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)
+![Version](https://img.shields.io/badge/Version-1.0.1-brightgreen.svg)
 
 ## Overview
 
