@@ -2,7 +2,9 @@
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Unity](https://img.shields.io/badge/Unity-2020.3%2B-green.svg)
-![Version](https://img.shields.io/badge/Version-1.0.1-brightgreen.svg)
+![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)
+![AUTO Reference](https://github.com/user-attachments/assets/041292aa-8b58-4950-9c08-0dc2517b99b4)
+
 
 ## Overview
 
@@ -21,3 +23,6 @@
 2. Open your Unity project and navigate to `Assets` > `Import Package` > `Custom Package`.
 3. Select the downloaded `.unitypackage` file and click `Open`.
 
+
+## Usage
+![AUTO Reference (1)](https://github.com/user-attachments/assets/5b748748-9c2b-483b-84cd-6a30dada67d8)
