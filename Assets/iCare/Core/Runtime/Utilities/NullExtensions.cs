@@ -11,9 +11,5 @@ namespace iCare.Utilities {
         public static bool IsUnityNull(this object obj) {
             return obj == null || (obj is Object unityObj && unityObj == null);
         }
-
-        public static bool IsNotNullAndActive(this Component comp) {
-            return comp != null && comp.gameObject.activeSelf;
-        }
     }
 }

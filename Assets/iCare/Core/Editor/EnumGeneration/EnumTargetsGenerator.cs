@@ -5,59 +5,61 @@ using iCare.Editor.PathEditorWindow;
 using iCare.Utilities;
 using UnityEditor;
 using UnityEngine;
-
+using Object = UnityEngine.Object; 
+    
 namespace iCare.Editor.EnumGeneration {
     public static class EnumTargetsGenerator {
         [MenuItem("iCare/Generate All Enums %#t")]
         public static void GenerateAll() {
-            var scriptableObjects =
-                AssetFinder.FindRegularAssets<ScriptableObject>(Paths.ScriptableObject);
+            var allObjects = new List<Object>();
+            allObjects.AddRange(AssetFinder.FindRegularAssets<ScriptableObject>(Paths.ScriptableObject));
+            allObjects.AddRange(AssetFinder.FindComponentsInPrefabs<MonoBehaviour>(Paths.Prefab));
 
-            if (scriptableObjects.IsNullOrEmpty()) {
+            if (allObjects.IsNullOrEmpty()) {
                 Debug.LogWarning("No scriptable objects found to generate enum.");
                 return;
             }
 
-            var scriptableEnumMap = CreateScriptableEnumMap(scriptableObjects);
-            Debug.Log($"Found {scriptableEnumMap.Count} enum types to generate.");
+            var scriptableEnumMap = CreateObjectEnumMap(allObjects);
 
+            foreach (var kvp in scriptableEnumMap) {
+                Debug.Log("Generating enum for: " + kvp.Key.Name);
+            }
+            
             GenerateEnums(scriptableEnumMap);
         }
 
+        static Dictionary<Type, List<Object>> CreateObjectEnumMap(IReadOnlyCollection<Object> objects) {
+            var objectEnumMap = new Dictionary<Type, List<Object>>();
 
-        static Dictionary<Type, List<ScriptableObject>> CreateScriptableEnumMap(
-            IReadOnlyCollection<ScriptableObject> scriptableObjects) {
-            var scriptableEnumMap = new Dictionary<Type, List<ScriptableObject>>();
+            foreach (var (objectType, enumType) in FindImplementingTypes()) {
+                if (!objectEnumMap.ContainsKey(enumType))
+                    objectEnumMap[enumType] = new List<Object>();
 
-            foreach (var (scriptableType, enumType) in FindImplementingTypes()) {
-                if (!scriptableEnumMap.ContainsKey(enumType))
-                    scriptableEnumMap[enumType] = new List<ScriptableObject>();
-
-                var matchingScriptableObjects = scriptableObjects.Where(so => so.GetType() == scriptableType);
-                scriptableEnumMap[enumType].AddRange(matchingScriptableObjects);
+                var matchingObjects = objects.Where(obj => obj.GetType() == objectType);
+                objectEnumMap[enumType].AddRange(matchingObjects);
             }
 
-            return scriptableEnumMap;
+            return objectEnumMap;
         }
 
-        static void GenerateEnums(Dictionary<Type, List<ScriptableObject>> scriptableEnumMap) {
-            foreach (var kvp in scriptableEnumMap) {
+        static void GenerateEnums(Dictionary<Type, List<Object>> objectEnumMap) {
+            foreach (var kvp in objectEnumMap) {
                 var enumType = kvp.Key;
-                var scriptableObjects = kvp.Value;
-                var enumValues = scriptableObjects.Select(so => so.name);
+                var objects = kvp.Value;
+                var enumValues = objects.Select(obj => obj.name);
                 EnumGenerator.GenerateByEnumType(enumType, enumValues);
             }
         }
 
-        static IEnumerable<(Type scriptableType, Type enumType)> FindImplementingTypes() {
+        static IEnumerable<(Type objectType, Type enumType)> FindImplementingTypes() {
             return AppDomain.CurrentDomain.GetAssemblies()
                 .SelectMany(assembly => assembly.GetTypes())
-                .Where(type => typeof(ScriptableObject).IsAssignableFrom(type))
-                .Select(type => (scriptableType: type, enumType: GetScriptableEnumGenericType(type)))
+                .Select(type => (objectType: type, enumType: GetObjectEnumGenericType(type)))
                 .Where(tuple => tuple.enumType != null);
         }
 
-        static Type GetScriptableEnumGenericType(Type type) {
+        static Type GetObjectEnumGenericType(Type type) {
             return type.GetInterfaces()
                 .Where(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(IEnumTarget<>))
                 .Select(i => i.GetGenericArguments()[0])

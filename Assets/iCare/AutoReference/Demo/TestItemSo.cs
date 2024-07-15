@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace iCare.AutoReference.Demo {
-    [CreateAssetMenu]
+    [CreateAssetMenu] //----------------Enum target interface is optional you can use string instead!
     public sealed class TestItemSo : ScriptableObject, IEnumTarget<TestItems>, IProvideReference
     {
         public object RefService => this;
