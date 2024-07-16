@@ -39,6 +39,22 @@
 
 -You can find all the scripts used in the tutorial video in the examples package.
 
+## Optimization
+**Since it is an operation that only takes place on the editor, it will not make the slightest difference in performance to your game.**
+
+
+
+
+By default, it searches for inject targets in all folders. When there are thousands of prefabs in your project, the inject process may slow down.
+![image](https://github.com/user-attachments/assets/e777ebdd-68e1-4548-9714-24c64f2beeb5)
+
+
+
+Therefore, if you drag the folders containing the Inject targets and services to the FolderPathManager, it will search only those folders. In this way, you can perform instant injection without searching for unnecessary assets.
+![image](https://github.com/user-attachments/assets/40a646b4-aa95-4dc5-bd4a-67f1ca519c47)
+
+
+
 
 
 ## Further Assistance
