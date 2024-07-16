@@ -2,7 +2,7 @@
 
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 ![Unity](https://img.shields.io/badge/Unity-2020.3%2B-green.svg)
-![Version](https://img.shields.io/badge/Version-1.0.0-brightgreen.svg)
+![Version](https://img.shields.io/badge/Version-1.0.1-brightgreen.svg)
 ![AUTO Reference](https://github.com/user-attachments/assets/041292aa-8b58-4950-9c08-0dc2517b99b4)
 
 
@@ -26,3 +26,20 @@
 
 ## Usage
 ![AUTO Reference (1)](https://github.com/user-attachments/assets/5b748748-9c2b-483b-84cd-6a30dada67d8)
+
+
+## Tutorial
+[![Watch the video](https://img.youtube.com/vi/kcjdpvvFNY8/0.jpg)](https://www.youtube.com/watch?v=kcjdpvvFNY8&feature=youtu.be)
+
+
+## Tests / Examples
+**Tests and example files are included as an additional package within the asset.**
+
+-Thanks to the tests, you can easily edit the asset, making sure that you do not break anything.
+
+-You can find all the scripts used in the tutorial video in the examples package.
+
+
+
+## Further Assistance
+If you need general troubleshooting or support, feel free to reach out via email at games.icare@gmail.com.
