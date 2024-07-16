@@ -67,7 +67,7 @@ namespace iCare.AutoReference.Editor {
         object[] GetMatchingServices(Type type, string targetID, bool allowEmptyID = false) {
             return _services.Where(service =>
                     service.RefTypes.Contains(type) &&
-                    (allowEmptyID || IsServiceIDMatching(targetID, service.RefID)))
+                    (allowEmptyID && string.IsNullOrEmpty(targetID) || IsServiceIDMatching(targetID, service.RefID)))
                 .Select(service => service.RefService)
                 .ToArray();
         }

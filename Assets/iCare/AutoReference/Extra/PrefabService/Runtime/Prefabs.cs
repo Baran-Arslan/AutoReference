@@ -2,5 +2,5 @@
 public enum Prefabs
 {
     Empty = 0,
-    PrefabExample_Projectile = 1,
+    Bullet = 1,
 }
